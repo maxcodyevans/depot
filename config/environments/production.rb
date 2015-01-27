@@ -1,6 +1,9 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+#from the book to turn on caching
+config.action_controller.perform_caching = true
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
