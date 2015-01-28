@@ -1,6 +1,6 @@
 <%= render 'store/navbar' %>
 
-<div class="row carousel-holder" margin_top="20px">
+<div class="row carousel-holder">
 
                     <div class="col-md-12">
                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -12,10 +12,10 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <%= image_tag("lips.jpg", :class => "slide-image")   %>
+                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
                                 </div>
                                 <div class="item">
-                                    <%= image_tag("eyes.jpg", :class => "slide-image")   %>
+                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
                                 </div>
                                 <div class="item">
                                     <img class="slide-image" src="http://placehold.it/800x300" alt="">
@@ -38,25 +38,28 @@
                  
                         	<% cache ['store', Product.latest] do %>
 							<% @products.each do |product| %>
-							<% cache ['entry', product] do %>
 							
-							<div class="col-sm-4 col-lg-4 col-md-4">
-                    	    <div class="thumbnail">
-							
-							<%= image_tag(product.image_url) %>
-							
-							 <div class="caption">
-                                <h4 class="pull-right"><%= number_to_currency(product.price) %></h4>
-                                <h4><a href="#"><%= product.title %></a>
-                                </h4>
-							
-							<p><%= sanitize(product.description) %>
-							</p>
-													
-							<%= button_to 'Add to Cart', line_items_path(product_id: product), remote:true, :class => 'btn btn-primary' %></a> 
-							</div>
-							</div>
-							  </div>
+							<% if product.category == "lips"%>
+								<% cache ['entry', product] do %>
+								
+								<div class="col-sm-4 col-lg-4 col-md-4">
+	                    	    <div class="thumbnail">
+								
+								<%= image_tag(product.image_url) %>
+								
+								 <div class="caption">
+	                                <h4 class="pull-right"><%= number_to_currency(product.price) %></h4>
+	                                <h4><a href="#"><%= product.title %></a>
+	                                </h4>
+								
+								<p><%= sanitize(product.description) %>
+								</p>
+														
+								<%= button_to 'Add to Cart', line_items_path(product_id: product), remote:true, :class => 'btn btn-primary' %></a> 
+								</div>
+								</div>
+								  </div>
+								  <%end%>
 							<% end %>
 							<% end %>
 							<% end %>

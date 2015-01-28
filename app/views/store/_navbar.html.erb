@@ -1,0 +1,20 @@
+   <div class="col-md-3">
+            	
+                <p class="lead"></br>Categorias</p>
+                <div class="list-group">
+                    <%= link_to "Labios", lips_path, :class=>'list-group-item' %>
+                     <%= link_to "Rostro", face_path, :class=>'list-group-item' %>
+                     <%= link_to "Ojos", eyes_path, :class=>'list-group-item' %>
+                     <%= link_to "Uñas", nails_path, :class=>'list-group-item' %>
+                    <a href="#" class="list-group-item">Tutoriales</a>
+                </div>
+                <div id="cart">
+			 	<%= render @cart %>
+				</div>
+            </div>
+
+            <div class="col-md-9">
+
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>

@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   
    match '/edit', :to => 'products#edit',          via: 'get'
    match '/new', :to => 'products#new',          via: 'get'
-   
+   match '/lips', :to => 'store#lips',          via: 'get'   
+    match '/face', :to => 'store#face',          via: 'get'  
+     match '/eyes', :to => 'store#eyes',          via: 'get' 
+      match '/nails', :to => 'store#nails',          via: 'get' 
   resources :products
 
   # The priority is based upon order of creation: first created -> highest priority.
