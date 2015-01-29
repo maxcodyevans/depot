@@ -6,6 +6,11 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+config.action_mailer.delivery_method = :postmark
+config.action_mailer.postmark_settings = { :api_token => "7c96c6f7-cbd6-4aae-b3db-0d111f3c9165" }
+
+
+
 module Depot
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

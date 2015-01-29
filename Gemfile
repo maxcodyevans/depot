@@ -12,6 +12,8 @@ group :development, :test do
   gem "sqlite3-ruby", :require => "sqlite3"
 end
 
+gem 'postmark-rails'  
+
 gem 'rails_12factor', group: :production
 
 # Use SCSS for stylesheets
