@@ -3,7 +3,12 @@ include CurrentCart
 before_action :set_cart
 
   def index
-    @products = Product.order(:title)
+  if params[:category]
+  @products = Product.where(:category => params[:category]).order(:title)
+  
+  else         
+  @products = Product.order(:title)
+  end
   end
   
   def lips

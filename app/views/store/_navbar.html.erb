@@ -2,10 +2,10 @@
             	
                 <p class="lead"></br>Categorias</p>
                 <div class="list-group">
-                    <%= link_to "Labios", lips_path, :class=>'list-group-item' %>
-                     <%= link_to "Rostro", face_path, :class=>'list-group-item' %>
-                     <%= link_to "Ojos", eyes_path, :class=>'list-group-item' %>
-                     <%= link_to "Uñas", nails_path, :class=>'list-group-item' %>
+                    <%= link_to "Labios", store_path(:category=>"lips"), :class=>'list-group-item' %>
+                     <%= link_to "Rostro",store_path(:category=>"face"),  :class=>'list-group-item' %>
+                     <%= link_to "Ojos", store_path(:category=>"eyes"), :class=>'list-group-item' %>
+                     <%= link_to "Uñas", store_path(:category=>"nails"), :class=>'list-group-item' %>
                     <a href="#" class="list-group-item">Tutoriales</a>
                 </div>
                 <div id="cart">
