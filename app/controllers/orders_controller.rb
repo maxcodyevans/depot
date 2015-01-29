@@ -2,6 +2,9 @@ class OrdersController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:new, :create]
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  
+    http_basic_authenticate_with :name => "admin", :password => "secret", :except => [:new, :create]
+
 
   # GET /orders
   # GET /orders.json
